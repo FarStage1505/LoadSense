@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LoadSense - Gestão Inteligente de Cargas. Solução avançada integrando hardware, software e inteligência artificial para monitoramento logístico em tempo real.">
+    <meta name="keywords" content="Logística, Gestão de Cargas, ESP32, Pesagem de Cargas, Inteligência Artificial, Monitoramento em Tempo Real, TCC, Rastreamento de Frotas">
+    <meta name="author" content="Vítor Oliveira Rangel, Vitor Silva Sousa, Levi Nathanael Mendes Sousa, Pedro Henrique Coneglian de Arruda">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.loadsense.com.br/">
+    <meta property="og:title" content="LoadSense - Gestão Inteligente de Cargas">
+    <meta property="og:description" content="Automatização de controle de estoque, pesagem de cargas e inteligência operacional através de hardware IoT e IA.">
+    <meta property="og:image" content="https://www.loadsense.com.br/assets/og-image.png">
+
+    <title>LoadSense | Gestão Inteligente de Cargas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-weight-hanging"></i></span>
+                Load<span class="highlight">Sense</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links">
+                <a href="#about" class="nav-item">Sobre</a>
+                <a href="#problems" class="nav-item">Desafios & Solução</a>
+                <a href="#architecture" class="nav-item">Arquitetura</a>
+                <a href="#features" class="nav-item">Funcionalidades</a>
+                <a href="#tcc-zone" class="nav-item">Área TCC</a>
+                <a href="#team" class="nav-item">Equipe</a>
+                <a href="#contact" class="btn btn-primary menu-btn">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal-left">
+                <div class="badge-tech">
+                    <span class="badge-dot"></span> IoT & Inteligência Artificial na Logística
+                </div>
+                <h1>Gestão Inteligente de Cargas em Tempo Real</h1>
+                <p class="hero-subtitle">A LoadSense integra hardware proprietário, sensores avançados e IA para automatizar o controle de estoque, pesagem de veículos e monitoramento de frotas com precisão absoluta.</p>
+                <div class="hero-cta-group">
+                    <a href="#tcc-zone" class="btn btn-primary"><i class="fa-solid fa-cube"></i> Ver Projeto TCC</a>
+                    <a href="#features" class="btn btn-secondary"><i class="fa-solid fa-sliders"></i> Conhecer Recursos</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal-right">
+                <div class="logo-glow-card">
+                    <div class="glow-layer"></div>
+                    <div class="card-inner">
+                        <i class="fa-solid fa-microchip network-icon"></i>
+                        <div class="big-logo-text">Load<span class="highlight">Sense</span></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Quem Somos</span>
+                <h2>LoadSense Tecnologia e Logística LTDA</h2>
+                <div class="bottom-line"></div>
+                <p class="section-description">Uma empresa focada em soluções inteligentes para a cadeia de suprimentos, desenvolvendo ecossistemas integrados de ponta a ponta para maximizar a visibilidade operacional.</p>
+            </div>
+
+            <div class="mvv-grid">
+                <div class="mvv-card reveal">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Missão</h3>
+                    <p>Transformar a logística de cargas através de soluções inteligentes e automatizadas, integrando hardware e software para garantir precisão, segurança e conformidade legal, otimizando o tempo e os custos dos clientes.</p>
+                </div>
+                <div class="mvv-card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Visão</h3>
+                    <p>Ser a principal referência em tecnologia de sensoriamento e gestão inteligente de frotas e estoques no mercado nacional, reconhecida pela inovação contínua, precisão de dados e impacto positivo na eficiência do transporte rodoviário.</p>
+                </div>
+                <div class="mvv-card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Valores</h3>
+                    <ul class="values-list">
+                        <li><i class="fa-solid fa-check text-orange"></i> Inovação com Propósito</li>
+                        <li><i class="fa-solid fa-check text-orange"></i> Precisão e Confiabilidade</li>
+                        <li><i class="fa-solid fa-check text-orange"></i> Segurança e Conformidade</li>
+                        <li><i class="fa-solid fa-check text-orange"></i> Eficiência Operacional</li>
+                        <li><i class="fa-solid fa-check text-orange"></i> Sustentabilidade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problems" class="problems-section section-padding">
+        <div class="container">
+            <div class="grid-two-columns">
+                <div class="problems-block reveal-left">
+                    <span class="section-tag tag-danger">Gargalos Atuais</span>
+                    <h2>Os Desafios Cruciais da Logística Moderna</h2>
+                    <p class="mb-4">O mercado de transporte e armazenagem sofre diariamente com a falta de dados estruturados e falhas operacionais críticas.</p>
+                    
+                    <div class="problem-item">
+                        <i class="fa-solid fa-triangle-exclamation icon-danger"></i>
+                        <div>
+                            <h4>Falta de Monitoramento & Rastreabilidade</h4>
+                            <p>Gestores operam às cegas, sem saber o peso exato transportado ou a localização exata dos ativos em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fa-solid fa-box-open icon-danger"></i>
+                        <div>
+                            <h4>Perda de Cargas e Altos Custos Logísticos</h4>
+                            <p>Desvios, sinistros e avarias geram prejuízos milionários por falta de alertas imediatos de segurança.</p>
+                        </div>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fa-solid fa-user-slash icon-danger"></i>
+                        <div>
+                            <h4>Erros Humanos & Falta de Inteligência</h4>
+                            <p>Processos manuais de pesagem e conferência de inventário lentos, passíveis de fraudes e falhas de digitação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-block reveal-right">
+                    <span class="section-tag tag-success">A Resposta Inteligente</span>
+                    <h2>A Abordagem Tecnológica LoadSense</h2>
+                    <p class="mb-4">Eliminamos as incertezas operacionais por meio de uma arquitetura robusta de engenharia de hardware e análise preditiva.</p>
+
+                    <div class="solution-item">
+                        <i class="fa-solid fa-circle-check icon-success"></i>
+                        <div>
+                            <h4>Pesagem Automatizada via Hardware Dedicado</h4>
+                            <p>Módulos sensores integrados coletam dados de carga diretamente na origem, mitigando erros humanos.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fa-solid fa-brain icon-success"></i>
+                        <div>
+                            <h4>Inteligência Operacional Autônoma</h4>
+                            <p>Algoritmos de IA analisam padrões de movimentação, prevendo anomalias e otimizando a distribuição de peso por eixo.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fa-solid fa-shield-halved icon-success"></i>
+                        <div>
+                            <h4>Conformidade Legal Estrita</h4>
+                            <p>Evite multas severas de trânsito e balança mantendo sua frota rigorosamente alinhada às legislações vigentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="architecture-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Rastreamento de Ponta a Ponta</span>
+                <h2>Fluxo de Dados Unificado</h2>
+                <div class="bottom-line"></div>
+                <p class="section-description">Entenda como a informação trafega desde os sensores físicos até a tomada de decisão inteligente na nuvem.</p>
+            </div>
+
+            <div class="flow-container reveal">
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-compress"></i></div>
+                    <h4>Sensores</h4>
+                    <p>Células de carga de alta precisão capturam a deformação mecânica do peso real.</p>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h4>ESP32</h4>
+                    <p>Processamento local dos sinais analógicos e filtragem digital de ruídos estruturais.</p>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h4>Cloud Server</h4>
+                    <p>Transmissão segura de telemetria em tempo real via protocolos otimizados de IoT.</p>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Dashboard Web</h4>
+                    <p>Interface gerencial avançada para análise de frotas de grande porte.</p>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h4>App Mobile</h4>
+                    <p>Acesso rápido de motoristas na cabine e operadores de pátio em campo.</p>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h4>Inteligência Artificial</h4>
+                    <p>Modelos matemáticos preditivos avaliam riscos e automatizam o estoque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Recursos Avançados</span>
+                <h2>Ecossistema Completo de Monitoramento</h2>
+                <div class="bottom-line"></div>
+                <p class="section-description">Uma suíte completa projetada para atender operadores logísticos exigentes que barram ineficiência.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>Dashboard Inteligente</h3>
+                    <p>Gráficos interativos em tempo real detalhando o status operacional da frota e métricas consolidadas de desempenho.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Monitoramento de Peso</h3>
+                    <p>Acompanhamento milimétrico da carga útil útil distribuída por eixo veicular, mitigando riscos estruturais.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3>Gestão de Cargas</h3>
+                    <p>Vinculação automatizada de romaneios e notas fiscais eletrônicas ao perfil físico aferido nos caminhões.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Detecção preditiva de fraudes de desvio de carga e sugestão inteligente de rotas de menor impacto mecânico.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-bell"></i></div>
+                    <h3>Alertas em Tempo Real</h3>
+                    <p>Notificações push e via canais integrados para violações de peso máximo permitido e aberturas suspeitas de baú.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-warehouse"></i></div>
+                    <h3>Automação de Estoque</h3>
+                    <p>Entrada e saída de mercadorias atualizadas automaticamente nos servidores ERP centrais através de balanças IoT.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3>Relatórios Inteligentes</h3>
+                    <p>Exportação customizada de históricos operacionais consolidados para auditoria em formatos PDF, CSV e XLS.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feat-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <h3>Telemetria Contínua</h3>
+                    <p>Transmissão ininterrupta de dados vitais mesmo em zonas de sombra de conectividade celular, via buffer local.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Stack Tecnológica</span>
+                <h2>Tecnologias Empregadas no Projeto</h2>
+                <div class="bottom-line"></div>
+            </div>
+            
+            <div class="tech-logos-grid reveal">
+                <div class="tech-box">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span>ESP32 / C++</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>Protocolo MQTT</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-brands fa-node-js"></i>
+                    <span>Node.js Cloud</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-solid fa-database"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React Web App</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-solid fa-mobile-button"></i>
+                    <span>React Native</span>
+                </div>
+                <div class="tech-box">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Python AI Engine</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tcc-zone" class="tcc-section section-padding">
+        <div class="container">
+            <div class="tcc-wrapper reveal">
+                <div class="tcc-badge">Apresentação de Banca Acadêmica</div>
+                <h2>Trabalho de Conclusão de Curso (TCC)</h2>
+                <p class="tcc-intro-p">O projeto propõe um sistema inteligente integrado a um aplicativo, que automatiza o controle de estoque e a pesagem de cargas, unindo engenharia de hardware embarcado e computação em nuvem.</p>
+                
+                <div class="grid-two-columns mt-5">
+                    <div class="tcc-details-col">
+                        <h3>Objetivos Gerais</h3>
+                        <p class="mb-4">Desenvolver um protótipo funcional escalável capaz de eliminar balanças estáticas tradicionais de alto custo, substituindo-as por monitoramento embarcado contínuo sob conformidade com as resoluções **CONTRAN 882/2021** e **945/2022**.</p>
+                        
+                        <h3>Benefícios Validados</h3>
+                        <ul class="tcc-benefits">
+                            <li><i class="fa-solid fa-circle-nodes"></i> **Zero Erro Humano**: Coleta automatizada sem intervenção mecânica ou manual do motorista.</li>
+                            <li><i class="fa-solid fa-shield-halved"></i> **Segurança Jurídica**: Mitigação imediata de multas por excesso de peso por eixo rodoviário.</li>
+                            <li><i class="fa-solid fa-hourglass-half"></i> **Ganho de Tempo**: Eliminação de gargalos em filas de balanças e conferências de pátio de triagem.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tcc-architecture-col">
+                        <h3>Arquitetura Técnica do Protótipo</h3>
+                        <div class="architecture-card-embedded">
+                            <div class="arch-layer">
+                                <span class="layer-num">1</span>
+                                <div>
+                                    <h5>Camada de Aquisição (Hardware)</h5>
+                                    <p>Células de carga com amplificadores HX711 conectados ao microcontrolador principal ESP32.</p>
+                                </div>
+                            </div>
+                            <div class="arch-layer">
+                                <span class="layer-num">2</span>
+                                <div>
+                                    <h5>Camada de Transporte (Comunicação)</h5>
+                                    <p>Conexão Wi-Fi/GPRS transmitindo pacotes encriptados em JSON via WebSockets e APIs RESTful.</p>
+                                </div>
+                            </div>
+                            <div class="arch-layer">
+                                <span class="layer-num">3</span>
+                                <div>
+                                    <h5>Camada de Aplicação (Visão do Usuário)</h5>
+                                    <p>Plataforma SPA responsiva e inteligência analítica baseada em regressões estatísticas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tcc-downloads-area">
+                    <h4>Documentos Oficiais do Projeto</h4>
+                    <div class="download-buttons">
+                        <a href="#" class="btn btn-primary download-btn"><i class="fa-solid fa-file-pdf"></i> Download Monografia (PDF)</a>
+                        <a href="#" class="btn btn-secondary download-btn"><i class="fa-solid fa-file-powerpoint"></i> Slides de Apresentação (PPTX)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Corpo de Engenharia</span>
+                <h2>Nossa Equipe</h2>
+                <div class="bottom-line"></div>
+                <p class="section-description">Estudantes e desenvolvedores dedicados à arquitetura lógica do ecossistema LoadSense.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Vítor Oliveira Rangel</h3>
+                    <p class="role">Líder do Projeto</p>
+                    <p class="team-desc">Responsável direto pelo Desenvolvimento de Hardware, Arquitetura de Firmware ESP32 e Engenharia de Software Core.</p>
+                    <div class="team-socials">
+                        <a href="https://instagram.com/Vitor_aov" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:vitor.o.rangel01@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal" style="transition-delay: 0.1s;">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-code"></i></div>
+                    <h3>Vitor Silva Sousa</h3>
+                    <p class="role">Desenvolvedor</p>
+                    <p class="team-desc">Focado no desenvolvimento de interfaces Web corporativas e integração do banco de dados relacional.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card reveal" style="transition-delay: 0.2s;">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-pen"></i></div>
+                    <h3>Levi Nathanael Mendes Sousa</h3>
+                    <p class="role">Documentação</p>
+                    <p class="team-desc">Especialista técnico focado no mapeamento de requisitos, normas ABNT NBR 15883 e análises regulatórias.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card reveal" style="transition-delay: 0.3s;">
+                    <div class="avatar-placeholder"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>Pedro Henrique Coneglian de Arruda</h3>
+                    <p class="role">Documentação</p>
+                    <p class="team-desc">Responsável pela validação de testes de conformidade de mercado, análise de riscos e levantamento bibliográfico.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section section-padding">
+        <div class="container stats-grid">
+            <div class="stat-box">
+                <div class="stat-number" data-target="99">0</div>
+                <div class="stat-label">Precisão Analítica (%)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="40">0</div>
+                <div class="stat-label">Redução de Custos (%)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Processos Automatizados (%)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="0">0</div>
+                <div class="stat-label">Falsos Alertas</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="other-projects section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tag">Extensões do Ecossistema</span>
+                <h2>Iniciativas e Módulos Conectados</h2>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="grid-two-columns">
+                <div class="initiative-card reveal">
+                    <h4>LoadSense Router Module</h4>
+                    <p>Módulo de software complementar embarcado no aplicativo móvel para cruzamento automatizado de rotas sugeridas pelo Waze/Google Maps com postos de pesagem ativos da ANTT.</p>
+                </div>
+                <div class="initiative-card reveal" style="transition-delay: 0.1s;">
+                    <h4>LoadSense Yard Manager</h4>
+                    <p>Módulo focado em grandes galpões e centros de distribuição que realiza o inventário cíclico cruzando o peso em tempo real sobre prateleiras inteligentes sensorizadas via Wi-Fi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="cta-banner-glow"></div>
+        <div class="container text-center reveal">
+            <h2>Pronto para otimizar sua gestão operacional?</h2>
+            <p>Leve a inteligência artificial e a pesagem em tempo real para a sua frota rodoviária ou infraestrutura de armazenagem.</p>
+            <a href="#contact" class="btn btn-primary btn-large">Fale com um Especialista Agora</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="grid-two-columns">
+                <div class="contact-info-col reveal-left">
+                    <span class="section-tag">Canais Abertos</span>
+                    <h2>Entre em Contato</h2>
+                    <p class="mb-5">Tem alguma dúvida técnica sobre o hardware ou deseja agendar uma demonstração completa do dashboard? Estamos à disposição.</p>
+                    
+                    <div class="contact-detail-item">
+                        <div class="c-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h5>WhatsApp Comercial</h5>
+                            <a href="https://wa.me/5511997767227" target="_blank" class="contact-link">(11) 99776-7227</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h5>E-mail Principal</h5>
+                            <a href="mailto:vitor.o.rangel01@gmail.com" class="contact-link">vitor.o.rangel01@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="c-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div>
+                            <h5>Instagram Oficial</h5>
+                            <a href="https://instagram.com/Vitor_aov" target="_blank" class="contact-link">@Vitor_aov</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-col reveal-right">
+                    <form class="premium-form" id="loadSenseForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" required placeholder="Ex: João Silva">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail Corporativo</label>
+                            <input type="email" id="email" required placeholder="Ex: joao@empresa.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" required>
+                                <option value="" disabled selected>Selecione um tópico</option>
+                                <option value="tcc">Dúvidas sobre o Projeto TCC</option>
+                                <option value="comercial">Parcerias e Licenciamento Comercial</option>
+                                <option value="hardware">Informações sobre Sensores e Hardware</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" rows="5" required placeholder="Escreva sua mensagem detalhadamente..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensagem Segura</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <a href="#hero" class="logo">Load<span class="highlight">Sense</span></a>
+                <p class="footer-slogan">Gestão Inteligente de Cargas</p>
+                <p class="footer-legal">LoadSense Tecnologia e Logística LTDA<br>Todos os direitos reservados &copy; 2026</p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navegação</h4>
+                <a href="#about">Sobre</a>
+                <a href="#problems">Desafios</a>
+                <a href="#architecture">Arquitetura</a>
+                <a href="#features">Funcionalidades</a>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Acadêmico</h4>
+                <a href="#tcc-zone">Projeto TCC</a>
+                <a href="#team">Banca Executiva</a>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>Desenvolvido com <i class="fa-solid fa-heart text-orange"></i> por Vítor Oliveira Rangel & Equipe.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top-btn" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
